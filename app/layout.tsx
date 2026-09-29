@@ -16,12 +16,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-gray-50 min-h-screen">
+      <body className="min-h-screen" style={{ background: "#080b12", color: "#e2e8f0" }}>
         <AuthProvider>
           <LangProvider>
             <Navbar />
             <main className="max-w-7xl mx-auto px-4 py-6">{children}</main>
-            <footer className="text-center text-xs text-gray-400 py-6 mt-10 border-t">
+          <footer className="text-center text-xs text-gray-500 py-6 mt-10 border-t border-gray-800">
               AAPDA SETU · Smart India Hackathon 2026 · PS S4 · Team Suraksha-x
             </footer>
           </LangProvider>
