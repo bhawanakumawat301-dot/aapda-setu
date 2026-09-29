@@ -32,11 +32,11 @@ export default function Navbar() {
   return (
     <>
       {!online && (
-        <div className="bg-amber-500 text-white text-center text-sm py-1.5 px-4 flex items-center justify-center gap-2 font-medium">
+       <div className="bg-red-600 text-white text-center text-sm py-1.5 px-4 flex items-center justify-center gap-2 font-medium">
           <WifiOff size={14} /> {t("offlineBanner", lang)}
         </div>
       )}
-      <nav className="bg-[#0a2342] text-white shadow-lg">
+     <nav style={{ background: "#0d1117", borderBottom: "1px solid #f97316" }} className="sticky top-0 z-50 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between flex-wrap gap-2">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 font-bold text-lg tracking-wide">
@@ -53,7 +53,7 @@ export default function Navbar() {
                 className={`px-3 py-1.5 rounded text-sm font-medium transition-colors ${
                   pathname === n.href
                     ? "bg-orange-500 text-white"
-                    : "hover:bg-white/10 text-white/80"
+                    : "text-gray-300 hover:bg-white/10 hover:text-orange-400"
                 }`}
               >
                 {n.label}
@@ -67,7 +67,8 @@ export default function Navbar() {
             <select
               value={lang}
               onChange={(e) => setLang(e.target.value as typeof lang)}
-              className="bg-white/10 text-white text-xs rounded px-2 py-1 border border-white/20 cursor-pointer"
+              style={{ background: "#1a1f2e", color: "#e2e8f0", borderColor: "#374151" }}
+className="text-xs rounded px-2 py-1 border cursor-pointer"
             >
               {LANGUAGES.map((l) => (
                 <option key={l.code} value={l.code} className="bg-[#0a2342]">
@@ -85,8 +86,8 @@ export default function Navbar() {
                 </div>
                 <button
                   onClick={() => setAgency(null)}
-                  className="bg-white/10 hover:bg-white/20 text-xs px-3 py-1.5 rounded transition-colors"
-                >
+                  style={{ background: "#1a1f2e", borderColor: "#374151" }}
+className="border text-gray-300 hover:text-white text-xs px-3 py-1.5 rounded transition-colors"
                   {t("logout", lang)}
                 </button>
               </div>
